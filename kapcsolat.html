@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="banner">
+        ✉️ Írj nekünk!
+    </div>
+
+    <div class="layout">
+        <header class="headerL">MyShop</header>
+        <nav class="headerR">
+            <ul>
+                <li><a href="home.html">Termékek</a></li>
+                <li><a href="mix.html">Mix</a></li>
+                <li><a href="inspo.html">Inspiráció</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
+
+        <main class="contact">
+            <form id="contactForm">
+                <label for="name">Név:</label>
+                <input type="text" id="name" placeholder="Pl.: Kiss Anna">
+                <div id="error-name" class="error-msg"></div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="pelda@gmail.hu">
+                <div id="error-mail" class="error-msg"></div>
+
+                <label for="phone">Telefonszám:</label>
+                <input type="tel" id="phone" placeholder="+36 20 202 2020">
+                <div id="error-tel" class="error-msg"></div>
+
+                <label for="message">Üzenet:</label>
+                <textarea id="message" placeholder="Írd le az üzenetedet"></textarea>
+                <div id="error-msg" class="error-msg"></div>
+
+                <label for="subject">Tárgy:</label>
+                <input type="text" id="subject" placeholder="Az üzenet tárgya">
+                <div id="error-sub" class="error-msg"></div>
+
+                <div class="cb">
+                    <label>Hírlevélre feliratkozás</label>
+                    <input type="checkbox" id="newsletter"> 
+                </div>
+
+                <label for="date">Kapcsolatfelvétel időpontja:</label>
+                <input type="date" id="date">
+
+                <button type="submit">Küldés</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

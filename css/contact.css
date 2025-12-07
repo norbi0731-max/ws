@@ -1,0 +1,38 @@
+.layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+        "headerL headerR"
+        "contact contact";
+    flex: 1;
+}
+.contact{
+    grid-area: contact;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 50px;
+}
+#contactForm{
+    max-width: 80%;
+    min-width: 40%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 80px auto;
+        grid-template-areas:
+            "headerL"
+            "headerR"
+            "contact";
+    }
+
+    .headerR ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

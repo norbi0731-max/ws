@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --bg: hsl(0 0% 5%);
+    --bg-light: hsl(0 0% 10%);
+    --bg-lighter: hsl(0 0% 20%);
+    --text: hsl(0 0% 95%);
+    --text-muted: hsl(0 0% 70%);
+    --important: hsl(5 80% 40%);
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: "Bebas Neue", sans-serif;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.banner {
+    background-color: var(--important);
+    color: var(--text);
+    text-align: center;
+    padding: 15px;
+    font-size: 1.8em;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+        "headerL headerR"
+        "filter shop";
+    flex: 1;
+}
+
+.headerL {
+    grid-area: headerL;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    background-color: var(--bg-light);
+}
+
+.headerR {
+    grid-area: headerR;
+    background-color: var(--bg-light);
+}
+
+.headerR ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+    height: 100%;
+    padding: 0 1em;
+}
+
+.headerR ul li a {
+    color: var(--text);
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.headerR ul li a:hover {
+    color: var(--important);
+}
+
+.filter {
+    grid-area: filter;
+    background-color: var(--bg);
+    padding: 1em;
+    font-size: 1em;
+    overflow-y: auto;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 1em;
+    border: none;
+    border-radius: 3px;
+}
+
+.cb{
+    display: flex;
+    gap: 1em;
+}
+.cb input{
+    width: auto;
+}
+.cb label{
+    width: fit-content;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: var(--important);
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+.input-error{
+    border: 2px solid var(--important);
+    border-radius: 0.3em;
+}
+.error-msg{
+    color: var(--important);
+    font-size: 1em;
+}
+
+.prodlist {
+    grid-area: shop;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1em;
+    padding: 1em;
+    overflow-y: auto;
+
+    align-content: start;
+}
+
+.product {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    text-align: center;
+    background-color: var(--bg-lighter);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    background-color: var(--text);
+}
+
+.product p {
+    color: var(--text-muted);
+    font-size: 1.2em;
+    padding: 0.5em;
+}
+
+.szett button, .product button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: var(--important);
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+}
+
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--important);
+    color: var(--text);
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+
+#saleOnly{
+    text-align:start;
+}
+
+
+
+/* Reszponzív */
+@media screen and (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto auto;
+        grid-template-areas:
+            "headerL"
+            "headerR"
+            "filter"
+            "shop";
+    }
+
+    .headerR ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .filter, .prodlist {
+        height: auto;
+    }
+
+    .banner{
+        font-size: 1.3em;
+    }
+}

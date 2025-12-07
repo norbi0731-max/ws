@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Főoldal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="banner">
+        🎉 Black Friday Akció! Ne maradj le, akár -50% egyes termékekre! 🎉
+    </div>
+
+    <div class="layout">
+        <header class="headerL">MyShop</header>
+        <nav class="headerR">
+            <ul>
+                <li><a href="home.html">Termékek</a></li>
+                <li><a href="mix.html">Mix</a></li>
+                <li><a href="inspo.html">Inspiráció</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
+
+        <aside class="filter">
+            <form id="filterForm">
+                <label for="category">Kategória:</label>
+                <select id="category" name="category" required>
+                    <option value="mind">--Mind--</option>
+                    <option value="cipo">Cipők</option>
+                    <option value="nadrag">Nadrágok</option>
+                    <option value="polo">Pólók</option>
+                </select>
+
+                <label for="minPrice">Minimum ár:</label>
+                <input type="number" id="minPrice" name="minPrice" placeholder="20000" min="0" required>
+
+                <label for="maxPrice">Maximum ár:</label>
+                <input type="number" id="maxPrice" name="maxPrice" placeholder="50000" min="0" required>
+                <div class="cb">
+                    <label for="saleOnly">Csak akciós termékek</label>
+                    <input type="checkbox" id="saleOnly" name="saleOnly">
+                </div>
+
+                <button type="submit">Szűrés</button>
+            </form>
+        </aside>
+
+        <main class="prodlist" id="prodlist">
+            
+        </main>
+    </div>
+
+    <script src="js/adatbetoltes.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
